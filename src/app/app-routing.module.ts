@@ -13,6 +13,8 @@ import { AccountService } from './core/services/account_services/account.service
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: '*', component: LoginComponent },
   {
     path: 'overview',
     component: OverviewComponent,
@@ -36,8 +38,6 @@ const routes: Routes = [
     component: NewAccountComponent,
     canActivate: [AuthGuardGuard]
   },
-  { path: 'login', component: LoginComponent },
-  { path: '*', component: LoginComponent },
   { path: '**', component: PagenotfoundComponent }
 ];
 
